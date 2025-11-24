@@ -2,6 +2,8 @@
 
 This project demonstrates a simple system to calculate and visualize the Decision Efficiency Index (DEI). It consists of a FastAPI backend for calculations and data storage, and a Nuxt 4 frontend for user interaction and analytics.
 
+![Quick Demo](https://iili.io/fKg8sTJ.md.png "DEI Demo")
+
 ## How it works
 
 1.  **Home Page**: You enter three parameters:
