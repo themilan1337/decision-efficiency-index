@@ -18,8 +18,10 @@ const calculateDEI = async () => {
   error.value = null
   result.value = null
 
+  const config = useRuntimeConfig()
+
   try {
-    const response = await fetch('http://localhost:8000/compute', {
+    const response = await fetch(`${config.public.apiUrl}/compute`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

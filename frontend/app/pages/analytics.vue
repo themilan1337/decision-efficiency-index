@@ -42,9 +42,11 @@ const chartOptions = {
   maintainAspectRatio: false
 }
 
+const config = useRuntimeConfig()
+
 const fetchData = async () => {
   try {
-    const response = await fetch('http://localhost:8000/history')
+    const response = await fetch(`${config.public.apiUrl}/history`)
     const data = await response.json()
     history.value = data
     processData(data)
@@ -90,7 +92,7 @@ const processData = (data: any[]) => {
 const resetHistory = async () => {
     if(!confirm("Are you sure you want to clear history?")) return;
     try {
-        await fetch('http://localhost:8000/reset', { method: 'POST' })
+        await fetch(`${config.public.apiUrl}/reset`, { method: 'POST' })
         fetchData()
     } catch(e) {
         console.error(e)
